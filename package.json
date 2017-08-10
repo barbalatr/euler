@@ -1,0 +1,19 @@
+{
+  "name": "euler",
+  "private": true,
+  "description": "",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbalatr/euler.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/barbalatr/euler/issues"
+  },
+  "homepage": "https://github.com/barbalatr/euler#readme",
+  "dependencies": {
+    "underscore": "latest"
+  }
+}
