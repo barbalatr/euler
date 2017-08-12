@@ -1,6 +1,11 @@
+var _ = require('underscore');
+
 console.log('Problem 1: ' + problem1());
 console.log('Problem 2: ' + problem2());
 console.log('Problem 3: ' + problem3());
+console.log('Problem 4: ' + problem4());
+
+function isEven (x) { return (x % 2) == 0; }
 
 function problem1 () {
   var result = 0;
@@ -45,7 +50,40 @@ function problem3 () {
 	return largestprime;
 }
 
+
 function problem4 () {
 	
+	var product = [];
+
+	for (var i = 100; i <= 999; i++) {
+		for(var j = 100; j <= 999; j++){
+			product.push(i*j)
+		}
+	}
+
+	function isPal (a) {
+		var b = "";
+		a = String(a);
+		for (var x = 0; x < a.length - 1; x++) {
+			b[a.length -1 - x] = a[x];
+		} 
+		return (a == b);
+	}
+	
+	return _.filter(product, isPal());
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
