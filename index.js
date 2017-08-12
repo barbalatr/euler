@@ -2,6 +2,7 @@ var _ = require('underscore');
 
 console.log('Problem 1: ' + problem1());
 console.log('Problem 2: ' + problem2());
+console.log('Problem 3: ' + problem3());
 
 function problem1 () {
   var result = 0;
@@ -30,4 +31,18 @@ function problem2 () {
 		}
 	}
 	return result;
+}
+
+
+
+function problem3 () {
+	var num = 600851475143;
+	var largestprime = 0
+	for (var i = 2; i <= num ; i++) {
+		if (num % i == 0) {
+			largestprime = i;
+			num = num / i;
+		}
+	}
+	return largestprime;
 }
