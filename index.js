@@ -46,3 +46,7 @@ function problem3 () {
 	}
 	return largestprime;
 }
+
+function problem4 () {
+	
+}
