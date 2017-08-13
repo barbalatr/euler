@@ -52,25 +52,24 @@ function problem3 () {
 
 
 function problem4 () {
-	
 	var product = [];
 
 	for (var i = 100; i <= 999; i++) {
-		for(var j = 100; j <= 999; j++){
+		for (var j = 100; j <= 999; j++) {
 			product.push(i*j)
 		}
 	}
 
 	function isPal (a) {
-		var b = "";
-		a = String(a);
-		for (var x = 0; x < a.length - 1; x++) {
-			b[a.length -1 - x] = a[x];
+		var b = [];
+		a = String(a).split('');
+		for (var x = 0; x < a.length; x++) {
+			b[a.length - 1 - x] = a[x];
 		} 
-		return (a == b);
+		return _.isEqual(a, b);
 	}
-	
-	return _.filter(product, isPal());
+	var palindromes = _.filter(product, isPal);
+  return palindromes[palindromes.length - 1];
 }
 
 
