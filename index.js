@@ -1,12 +1,13 @@
 var _ = require('underscore');
 
-console.log('Problem 1: ' + problem1());
-console.log('Problem 2: ' + problem2());
-console.log('Problem 3: ' + problem3());
-console.log('Problem 4: ' + problem4());
-
-function isEven (x) { return (x % 2) == 0; }
-
+module.exports = {
+  problem1: problem1,
+  problem2: problem2,
+  problem3: problem3,
+  problem4: problem4,
+  fibUntil: fibUntil,
+  isPal: isPal,
+};
 function problem1 () {
   var result = 0;
   for (var i = 0; i < 1000; i++) {
@@ -24,20 +25,18 @@ function problem2 () {
 		}
 	}
 	return result;
-
-  function fibUntil (x) {
-    var fibo = [1];
-    var i = 1;
-    var next = 1;
-    while (next < x) {
-      fibo.push(next);
-      i++;
-      next = fibo[i-2]+fibo[i-1];
-    }
-    return fibo;
-  }
 }
-
+function fibUntil (x) {
+  var fibo = [1];
+  var i = 1;
+  var next = 1;
+  while (next <= x) {
+    fibo.push(next);
+    i++;
+    next = fibo[i-2]+fibo[i-1];
+  }
+  return fibo;
+}
 function problem3 () {
 	var num = 600851475143;
 	var largestprime = 0
@@ -49,40 +48,21 @@ function problem3 () {
 	}
 	return largestprime;
 }
-
-
 function problem4 () {
 	var product = [];
-
 	for (var i = 100; i <= 999; i++) {
-		for (var j = 100; j <= 999; j++) {
+		for(var j = 100; j <= 999; j++){
 			product.push(i*j)
 		}
 	}
-
-	function isPal (a) {
-		var b = [];
-		a = String(a).split('');
-		for (var x = 0; x < a.length; x++) {
-			b[a.length - 1 - x] = a[x];
-		} 
-		return _.isEqual(a, b);
-	}
 	var palindromes = _.filter(product, isPal);
-  return palindromes[palindromes.length - 1];
+  return _.last(palindromes);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function isPal (a) {
+  var b = [];
+  a = String(a).split('');
+  for (var x = 0; x < a.length; x++) {
+    b[a.length - 1 - x] = a[x];
+  } 
+  return _.isEqual(a, b);
+}
