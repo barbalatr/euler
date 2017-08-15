@@ -5,9 +5,11 @@ module.exports = {
   problem2: problem2,
   problem3: problem3,
   problem4: problem4,
+  problem5: problem5,
   fibUntil: fibUntil,
   isPal: isPal,
 };
+
 function problem1 () {
   var result = 0;
   for (var i = 0; i < 1000; i++) {
@@ -65,4 +67,17 @@ function isPal (a) {
     b[a.length - 1 - x] = a[x];
   } 
   return _.isEqual(a, b);
+}
+
+function problem5 () {
+  var num = 2;
+  var bool = false;
+  while (bool === false) {
+    for (var i = 2; i <= 20; i++) {
+      if(num % i !== 0){break;}      
+    }
+    num = num + 1;
+    bool = (i == 21);  
+  }
+  return num - 1;
 }
