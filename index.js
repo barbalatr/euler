@@ -7,6 +7,7 @@ module.exports = {
   problem4: problem4,
   problem5: problem5,
   problem6: problem6,
+  problem7: problem7,
   fibUntil: fibUntil,
   isPal: isPal,
 };
@@ -100,10 +101,20 @@ function problem6 () {
 	return squaresum - sumsquare;
 }
 
-
-
-
-
+function problem7 () {
+	var prime = [2];
+	var num = 2;
+	while (prime.length < 10001) {
+		for (var i = 2; i < num; i++) {
+			if (num % i == 0) {break;}
+			if (i + 1 == num) {
+				prime.push(num);
+			}
+		}
+		num += 1; 
+	}
+	return prime[prime.length - 1];
+}
 
 
 
