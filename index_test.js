@@ -13,7 +13,9 @@ var index = require('./index.js');
 // test(index.problem2(), 4613732, 'problem2');
 // test(index.problem3(), 6857, 'problem3');
 // test(index.problem4(), 580085, 'problem4');
-test(index.problem5(), 232792560, 'problem5');
+// test(index.problem5(), 232792560, 'problem5');
+test(index.problem6(), 25164150, 'problem6');
+
 
 
 function test (actual, expected, functionName) {

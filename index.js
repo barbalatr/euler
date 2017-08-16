@@ -6,6 +6,7 @@ module.exports = {
   problem3: problem3,
   problem4: problem4,
   problem5: problem5,
+  problem6: problem6,
   fibUntil: fibUntil,
   isPal: isPal,
 };
@@ -81,3 +82,42 @@ function problem5 () {
   }
   return num - 1;
 }
+
+function problem6 () {
+	 
+	 var sumsquare = 0;
+	 var sum = 0;	
+	 var squaresum = 0;
+	 
+	 for (var i = 1; i <= 100; i++) {
+	 	sumsquare = sumsquare + Math.pow(i,2);
+	 }
+	 for (var j = 1; j <= 100; j++) {
+	 	sum = sum + j;
+	 	squaresum = Math.pow(sum,2);
+	 }
+		
+	return squaresum - sumsquare;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
