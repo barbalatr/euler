@@ -10,6 +10,7 @@ module.exports = {
   problem7: problem7,
   problem8: problem8,
   problem9: problem9,
+  problem10: problem10,
   fibUntil: fibUntil,
   isPal: isPal,
 };
@@ -175,7 +176,29 @@ function problem9 () {
 	}	
 }
 
+function problem10 () {
+	return _.reduce(getPrimeList(),add);
 
+	var primeList = [];
+	var num = 2;
+	
+	function getPrimeList () {
+		while (num < 2000000) {
+			if (isPrime(num)) {primeList.push(num);}
+			num++;	
+		}
+		return primeList;
+	}
+
+	function isPrime (a) { 
+		for (var i = 2; i <= Math.sqrt(a); i++) {
+			if (a % i === 0) {return false;}
+		}
+		return true;
+	}
+	
+	function add (a, b) {return a + b; }
+}	
 
 
 
