@@ -9,6 +9,7 @@ module.exports = {
   problem6: problem6,
   problem7: problem7,
   problem8: problem8,
+  problem9: problem9,
   fibUntil: fibUntil,
   isPal: isPal,
 };
@@ -104,7 +105,7 @@ function problem6 () {
 
 function problem7 () {
 	var prime = [2];
-	var num = 2;
+	var num = 2; 
 	while (prime.length < 10001) {
 		for (var i = 2; i < num; i++) {
 			if (num % i == 0) {break;}
@@ -158,7 +159,21 @@ function problem8 () {
  	return result;
 }
 
+function problem9 () {
+	return product_abc(find_abc());	
 
+	function product_abc ([x,y,z]) {return x*y*z;}	
+	
+	function find_abc () {
+		var a, b, c;
+		for (b = 1; b < 999; b++) {
+			for (a = 0; a < b; a++) {
+				c = 1000 - a - b;
+				if (Math.pow(a,2) + Math.pow(b,2) == Math.pow(c,2)) { return [a,b,c]; }	
+			}		
+		}
+	}	
+}
 
 
 

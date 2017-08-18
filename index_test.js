@@ -16,8 +16,8 @@ var index = require('./index.js');
 // test(index.problem5(), 232792560, 'problem5');
 // test(index.problem6(), 25164150, 'problem6');
 // test(index.problem7(), 104743, 'problem7');
-test(index.problem8(), 23514624000, 'problem8');
-
+// test(index.problem8(), 23514624000, 'problem8');
+test(index.problem9(), 31875000, 'problem9');
 
 
 
